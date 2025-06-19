@@ -1,0 +1,71 @@
+{
+  "manifest_version": 3,
+  "name": "AutoJobr - Job Application Automation",
+  "version": "1.0.0",
+  "description": "Automate job applications with intelligent form filling and application tracking",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://linkedin.com/*",
+    "https://*.linkedin.com/*",
+    "https://indeed.com/*",
+    "https://*.indeed.com/*",
+    "https://glassdoor.com/*",
+    "https://*.glassdoor.com/*",
+    "https://naukri.com/*",
+    "https://*.naukri.com/*",
+    "https://*.myworkdayjobs.com/*",
+    "https://angel.co/*",
+    "https://*.angel.co/*",
+    "https://monster.com/*",
+    "https://*.monster.com/*",
+    "https://ziprecruiter.com/*",
+    "https://*.ziprecruiter.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://linkedin.com/*",
+        "https://*.linkedin.com/*",
+        "https://indeed.com/*",
+        "https://*.indeed.com/*",
+        "https://glassdoor.com/*",
+        "https://*.glassdoor.com/*",
+        "https://naukri.com/*",
+        "https://*.naukri.com/*",
+        "https://*.myworkdayjobs.com/*",
+        "https://angel.co/*",
+        "https://*.angel.co/*",
+        "https://monster.com/*",
+        "https://*.monster.com/*",
+        "https://ziprecruiter.com/*",
+        "https://*.ziprecruiter.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "AutoJobr"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["injected.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
